@@ -16,8 +16,9 @@ class Player extends Tamagotchi{
         super(name, age, hunger, sleepiness, boredom);
         this.characteristics = ['silly', 'cute', 'wild', 'adorable']
     }
+    
 hungryTam(){
-        if(this.tamagatchi.hunger > 6){
+    if(this.tamagatchi.hunger > 6){
         console.log('Uh oh! Time to feed Tamagotchi!')
     }else {
         console.log(${this.name} + ` doesn't need feeding right now`)
@@ -26,22 +27,26 @@ hungryTam(){
 sleepyTam(){
     if(this.tamagatchi.sleepiness > 6){
     console.log('Uh oh! Time to go to bed...')
-}else {
+    }else {
     console.log(${this.name} + ` is fully rested`)
     }
 }
 boredTam(){
     if(this.tamagatchi.boredom > 6){
     console.log('Your Tamagotchi is bored!')
-}else {
+    }else {
     console.log(${this.name} + ` is ready to rumble!`)
+        }
     }
 }
-}
 
-const hungerEl = document.getElementById('btn-hunger');
-const pauseEl = document.getElementById('btn-pause');
-const boredomEl = document.getElementById('btn-boredom');
+const feedrEl = document.getElementById('btn-feed');
+const sleepEl = document.getElementById('btn-sleep');
+const playEl = document.getElementById('btn-play');
+
+const hungerEl = document.getElementById('hunger');
+const pauseEl = document.getElementById('pause');
+const boredomEl = document.getElementById('boredom');
 
 ///////AGE COUNTER
 const startEl = document.getElementById('btn-start');
