@@ -1,5 +1,6 @@
 body{
     background-image: url(tamagotchi.jpg)
+    
 }
 h1{
     color: white;
@@ -7,9 +8,21 @@ h1{
     font-size: 70px;
     margin-top: 10;
 }
+
 p{
     color: white;
     text-align: left;
     font-size: 70px;
     margin-top: 10;
+    margin: 20px;
+}
+div{
+    color: white;
+    font-size: 30px;
+}
+button{
+    background-color: white;
+    color: rgb(154, 143, 143);
+    font-size: 20px;
+  
 }

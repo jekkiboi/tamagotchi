@@ -3,87 +3,123 @@ const startEl = document.getElementById('btn-startGame');
 const pauseEl = document.getElementById('btn-pauseGame');
 const resetEl = document.getElementById('btn-resetGame');
 const ageEl = document.getElementById('age');
-
-
+///EAT-SLEEP-PLAY
+const hungerEl = document.getElementById('hunger');
+const feedEl = document.getElementById('btn-feed');
+const sleepinessEl = document.getElementById('sleepiness');
+const sleepEl = document.getElementById('btn-sleep');
+const boredomEl = document.getElementById('boredom');
+const playEl = document.getElementById('btn-play');
 let age = 0;
 let interval = null;
 
 function handleStartClick() {
     interval = setInterval(function() {
-        age++;
+       if (age < 100) {
+            age++; 
+        }
+        hungerInterval()
+        sleepInterval()
+        playInterval()
+        ageEl.textContent = 'Age:' + age;
+         }, 1000);
+    }    
 
-        //increase age on pgae
-    ageEl.textContent = 'Age:' + age;
-    }, 1000);
-}
 function handlePauseClick(){
-    //Stop the provided interval from running
     clearInterval(interval);
-}
+    }
 function handleResetClick(){
-    //Set age back to 0
     age = 0;
+    hunger =0;
+    boredom = 0;
+    sleepiness = 0;
 ageEl.textContent = 'Age: ' + age;
-    //stop the interval from running
+hungerEl.textContent = 'Hunger: ' + hunger;
+sleepinessEl.textContent = 'Sleepiness: ' + sleepiness;
+boredomEl.textContent = 'Boredom: ' + boredom;
     clearInterval(interval);
-}
-
-//When the start button is clicked, call the provided function
+    }
 startEl.addEventListener('click', handleStartClick);
 pauseEl.addEventListener('click', handlePauseClick);
 resetEl.addEventListener('click', handleResetClick);
 
+////////////HUNGER COUNTER//////////
+let hunger = 0;
+function handleFeedClick() {
+         hunger -= 3; 
+    }
+function hungerInterval() {
+        hunger++;
+        hungerEl.textContent = 'Hunger:' + hunger;
+    } 
+feedEl.addEventListener('click', handleFeedClick);
 
-// class Tamagotchi {
-//     constructor(name, age, hunger, sleepiness, boredom){
-//         this.name = name;
-//         this.age = age;
-//         this.hunger = hunger;
-//         this.sleepiness = sleepiness;
-//         this.boredom = boredom;
-//     }
-//     greet(){
-//     console.log('hello master!')
-//     }
-// }
+////////////SLEEP COUNTER//////////
+let sleepiness = 0;
+function handleSleepClick() {
+        sleepiness -= 3; 
+    }
+function sleepInterval() {
+        sleepiness++;
+        sleepinessEl.textContent = 'Sleepiness:' + sleepiness;
+    } 
+sleepEl.addEventListener('click', handleSleepClick);
 
-// class Player extends Tamagotchi{
-//     constructor(name, age, hunger, sleepiness, boredom){
-//         super(name, age, hunger, sleepiness, boredom);
-//         this.characteristics = ['silly', 'cute', 'wild', 'adorable']
-//     }
-
-
-// // hungryTam(){
-// //     if(this.tamagatchi.hunger > 6){
-// //         console.log('Uh oh! Time to feed Tamagotchi!')
-// //     }else {
-// //         console.log(${this.name} + ` doesn't need feeding right now`)
-// //     }
-// // }
-// // sleepyTam(){
-// //     if(this.tamagatchi.sleepiness > 6){
-// //     console.log('Uh oh! Time to go to bed...')
-// //     }else {
-// //     console.log(${this.name} + ` is fully rested`)
-// //     }
-// // }
-// // boredTam(){
-// //     if(this.tamagatchi.boredom > 6){
-// //     console.log('Your Tamagotchi is bored!')
-// //     }else {
-// //     console.log(${this.name} + ` is ready to rumble!`)
-// //         }
-// //     }
-// // }
+////////////BOREDOM COUNTER//////////
+let boredom = 0;
+function handlePlayClick() {
+        boredom -= 3; 
+    }
+function playInterval() {
+        boredom++;
+        boredomEl.textContent = 'Boredom:' + boredom;
+    } 
+playEl.addEventListener('click', handlePlayClick);
 
 
+/////////////TAMAGOTCHI CLASS???///////////
+class Tamagotchi {
+    constructor(name, age, hunger, sleepiness, boredom){
+        this.name = name;
+        this.age = age;
+        this.hunger = hunger;
+        this.sleepiness = sleepiness;
+        this.boredom = boredom;
+    }
+    greet(){
+    console.log('hello master!')
+    }
+}
+////////MY ATTEMPT AT CREATING EXTENDED CLASS/////////
+class Player extends Tamagotchi{
+    constructor(name, age, hunger, sleepiness, boredom){
+        super(name, age, hunger, sleepiness, boredom);
+        this.characteristics = ['silly', 'cute', 'wild', 'adorable']
+    }
+    hungryTam(){
+    if(this.tamagatchi.hunger > 6){
+            console.log('Uh oh! Time to feed Tamagotchi!')
+         }else {
+            console.log(`${this.name} + doesn't need feeding right now`)
+        }
+    }
+    sleepyTam(){
+    if(this.tamagatchi.sleepiness > 6){
+        console.log('Uh oh! Time to go to bed...')
+    }else {
+        console.log(`${this.name} +  is fully rested`)
+        }
+    }
+    boredTam(){
+    if(this.tamagatchi.boredom > 6){
+        console.log('Your Tamagotchi is bored!')
+    }else {
+        console.log(`${this.name} +  is ready to rumble!`)
+        }
+    }
+}
 
-
-// //////////////////////////////////////////////////////
-
-// //HUNGER COUNTER
-
+//PSEUDOCODE 
 // const feedEl = document.getElementById('btn-feed');
 // const sleepEl = document.getElementById('btn-sleep');
 // const playEl = document.getElementById('btn-play');
@@ -91,3 +127,7 @@ resetEl.addEventListener('click', handleResetClick);
 // const hungerEl = document.getElementById('hunger');
 // const pauseEl = document.getElementById('pause');
 // const boredomEl = document.getElementById('boredom');
+
+//////////////////////////////////////////////////////
+
+
