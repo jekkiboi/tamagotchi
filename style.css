@@ -7,6 +7,30 @@ h1{
     text-align: center;
     font-size: 70px;
     margin-top: 10;
+    text-shadow: 1px 1px 0 rgb(6, 6, 6),
+    -1px 1px 0 rgb(6, 6, 6),
+    1px -1px 0 rgb(6, 6, 6),
+    -1px -1px 0 rgb(6, 6, 6),
+    0px 1px 0 rgb(6, 6, 6),
+    0px -1px 0 rgb(6, 6, 6),
+    -1px 0px 0 rgb(6, 6, 6),
+    1px 0px 0 rgb(6, 6, 6),
+    2px 2px 0 rgb(6, 6, 6),
+    -2px 2px 0 rgb(6, 6, 6),
+    2px -2px 0 rgb(6, 6, 6),
+    -2px -2px 0 rgb(6, 6, 6),
+    0px 2px 0 rgb(6, 6, 6),
+    0px -2px 0 rgb(6, 6, 6),
+    -2px 0px 0 rgb(6, 6, 6),
+    2px 0px 0 rgb(6, 6, 6),
+    1px 2px 0 rgb(6, 6, 6),
+    -1px 2px 0 rgb(6, 6, 6),
+    1px -2px 0 rgb(6, 6, 6),
+    -1px -2px 0 rgb(6, 6, 6),
+    2px 1px 0 rgb(6, 6, 6),
+    -2px 1px 0 rgb(6, 6, 6),
+    2px -1px 0 rgb(6, 6, 6),
+    -2px -1px 0 rgb(6, 6, 6),
 }
 
 p{
@@ -16,6 +40,10 @@ p{
     margin-top: 10;
     margin: 20px;
 }
+span{
+    margin: 0 auto;
+}
+
 div{
     color: white;
     font-size: 30px;
