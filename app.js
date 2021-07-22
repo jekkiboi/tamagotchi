@@ -1,3 +1,4 @@
+
 ///////AGE COUNTER
 const startEl = document.getElementById('btn-startGame');
 const pauseEl = document.getElementById('btn-pauseGame');
@@ -12,6 +13,25 @@ const boredomEl = document.getElementById('boredom');
 const playEl = document.getElementById('btn-play');
 let age = 0;
 let interval = null;
+
+/////////////TAMAGOTCHI CLASS???///////////
+class Tamagotchi {
+    // constructor(name, age, hunger, sleepiness, boredom){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.hunger = hunger;
+    //     this.sleepiness = sleepiness;
+    //     this.boredom = boredom;
+
+
+////////////////CLOSE BRACKET CLASS/////////////
+greet(){
+    console.log('hello master!')
+        }
+    }
+
+
+
 
 function handleStartClick() {
     interval = setInterval(function() {
@@ -75,49 +95,39 @@ function playInterval() {
         boredomEl.textContent = 'Boredom:' + boredom;
     } 
 playEl.addEventListener('click', handlePlayClick);
+ 
 
 
-/////////////TAMAGOTCHI CLASS???///////////
-class Tamagotchi {
-    constructor(name, age, hunger, sleepiness, boredom){
-        this.name = name;
-        this.age = age;
-        this.hunger = hunger;
-        this.sleepiness = sleepiness;
-        this.boredom = boredom;
-    }
-    greet(){
-    console.log('hello master!')
-    }
-}
-////////MY ATTEMPT AT CREATING EXTENDED CLASS/////////
+///////////MY ATTEMPT AT CREATING EXTENDED CLASS/////////
 class Player extends Tamagotchi{
     constructor(name, age, hunger, sleepiness, boredom){
         super(name, age, hunger, sleepiness, boredom);
         this.characteristics = ['silly', 'cute', 'wild', 'adorable']
-    }
-    hungryTam(){
-    if(this.tamagatchi.hunger > 6){
-            console.log('Uh oh! Time to feed Tamagotchi!')
-         }else {
-            console.log(`${this.name} + doesn't need feeding right now`)
-        }
-    }
-    sleepyTam(){
-    if(this.tamagatchi.sleepiness > 6){
-        console.log('Uh oh! Time to go to bed...')
-    }else {
-        console.log(`${this.name} +  is fully rested`)
-        }
-    }
-    boredTam(){
-    if(this.tamagatchi.boredom > 6){
-        console.log('Your Tamagotchi is bored!')
-    }else {
-        console.log(`${this.name} +  is ready to rumble!`)
-        }
+
     }
 }
+    // hungryTam(){
+    // if(this.tamagatchi.hunger > 6){
+    //         console.log('Uh oh! Time to feed Tamagotchi!')
+    //      }else {
+    //         console.log(`${this.name} + doesn't need feeding right now`)
+    //     }
+    // }
+    // sleepyTam(){
+    // if(this.tamagatchi.sleepiness > 6){
+    //     console.log('Uh oh! Time to go to bed...')
+    // }else {
+    //     console.log(`${this.name} +  is fully rested`)
+    //     }
+    // }
+    // boredTam(){
+    // if(this.tamagatchi.boredom > 6){
+    //     console.log('Your Tamagotchi is bored!')
+    // }else {
+    //     console.log(`${this.name} +  is ready to rumble!`)
+    //     }
+    // }
+// }
 
 //PSEUDOCODE 
 // const feedEl = document.getElementById('btn-feed');
