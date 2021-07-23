@@ -1,11 +1,18 @@
+const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded', (e)=>{
+    setTimeout(()=>{
+        splash.classList.add('display-none');
+    }, 2000);
+})
+
 
 ///////AGE COUNTER
 const startEl = document.getElementById('btn-startGame');
 const pauseEl = document.getElementById('btn-pauseGame');
 const resetEl = document.getElementById('btn-resetGame');
 const ageEl = document.getElementById('age');
-
-///EAT-SLEEP-PLAY
+///////EAT-SLEEP-PLAY
 const alertsEl = document.getElementById('alerts');
 const hungerEl = document.getElementById('hunger');
 const feedEl = document.getElementById('btn-feed');
@@ -13,103 +20,112 @@ const sleepinessEl = document.getElementById('sleepiness');
 const sleepEl = document.getElementById('btn-sleep');
 const boredomEl = document.getElementById('boredom');
 const playEl = document.getElementById('btn-play');
-
+//METERS
+// const hungerMeter = document.getElementById('hunger-meter')
+// const sleepinessMeter = document.getElementById('sleepiness-meter')
+// const boredomrMeter = document.getElementById('boredom-meter')
 let age = 0;
 let interval = null;
+let hungerInterval = null;
+let sleepInterval = null;
+let playInterval = null;
 
+/////////////TAMAGOTCHI CLASS???///////////
+class Tamagotchi {
+    constructor(name, age){
+        this.interval = null
+        this.name = name
+        this.age = age
+        this.hunger = 0;
+        this.sleepiness = 0;
+        this.boredom = 0;
+}
+//////////////HUNGER COUNTER////////////
+hungerInterval() {
+    if (this.hunger < 10){ 
+        this.hunger++;
+        }
+        hungerEl.textContent = 'Hunger:' + this.hunger;
+}
+//////////////SLEEP COUNTER//////////////
+ sleepInterval() {
+    if (this.sleepiness < 10){ 
+        this.sleepiness++;
+        }
+        sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
+    } 
+//////////////BOREDOM COUNTER////////////
+ playInterval() {
+    if (this.boredom < 10){  
+        this.boredom++;
+        }
+        boredomEl.textContent = 'Boredom:' + this.boredom;
+    }
+////////////////CLOSE BRACKET CLASS//////////////
+}
+/////////////////////////////////////////////////
+let myTamagotchi = new Tamagotchi(0, 0, 0, 0, 0, 0)
 
 function handleStartClick() {
-    interval = setInterval(function() {
-       if (age < 100) {
-            age++; 
-        }
-        hungerInterval()
-        sleepInterval()
-        playInterval()
-        ageEl.textContent = 'Age:' + age;
-         }, 1000);
-    }    
+    playEl.classList.remove('hide')
+    sleepEl.classList.remove('hide')
+    feedEl.classList.remove('hide')
 
-function handlePauseClick(){
-    clearInterval(interval);
-    }
+    myTamagotchi.interval = setInterval(() => {
+     if (myTamagotchi.age < 20) {
+        myTamagotchi.age++; 
+        myTamagotchi.hungerInterval()
+        myTamagotchi.sleepInterval()
+        myTamagotchi.playInterval()
+        ageEl.textContent = 'Age:' + myTamagotchi.age;
+         }
+    }, 1000)
+} 
+
+function handleFeedClick() {
+    myTamagotchi.hunger -= 3; 
+}
+feedEl.addEventListener('click', handleFeedClick);
+
+function handleSleepClick() {
+    myTamagotchi.sleepiness -= 3; 
+}
+sleepEl.addEventListener('click', handleSleepClick);
+
+function handlePlayClick() {
+    myTamagotchi.boredom -= 3; 
+}
+playEl.addEventListener('click', handlePlayClick);
 
 function handleResetClick(){
-    age = 0;
-    hunger =0;
-    boredom = 0;
-    sleepiness = 0;
-ageEl.textContent = 'Age: ' + age;
-hungerEl.textContent = 'Hunger: ' + hunger;
-sleepinessEl.textContent = 'Sleepiness: ' + sleepiness;
-boredomEl.textContent = 'Boredom: ' + boredom;
-    clearInterval(interval);
-    }
+    myTamagotchi.age = 0;
+    myTamagotchi.hunger =0;
+    myTamagotchi.boredom = 0;
+    myTamagotchi.sleepiness = 0;
+ageEl.textContent = 'Age: ' + myTamagotchi.age;
+hungerEl.textContent = 'Hunger: ' + myTamagotchi.hunger;
+sleepinessEl.textContent = 'Sleepiness: ' + myTamagotchi.sleepiness;
+boredomEl.textContent = 'Boredom: ' + myTamagotchi.boredom;
+    clearInterval(myTamagotchi.interval);
+}
+function handlePauseClick(){
+    clearInterval(myTamagotchi.interval);
+}
 startEl.addEventListener('click', handleStartClick);
 pauseEl.addEventListener('click', handlePauseClick);
 resetEl.addEventListener('click', handleResetClick);
 
-/////////////TAMAGOTCHI CLASS???///////////
-// class Tamagotchi {
-//     constructor(name, age, hunger, sleepiness, boredom){
-//         this.interval = null
-//         this.hunger = hunger
-//         this.name = name
-//         this.age = age
-//         this.sleepiness = sleepiness
-//         this.boredom = boredom
-//         }
-////////////////////////////////////////
-
-
-////////////////CLOSE BRACKET CLASS//////////////
-// }
-////////////////END CLOSE BRACKET CLASS/////////////
-
-////////////HUNGER COUNTER//////////
-let hunger = 0;
-function handleFeedClick() {
-         hunger -= 3; 
-    }
-function hungerInterval() {
-    if (hunger < 10){ 
-        hunger++;
-        }
-        hungerEl.textContent = 'Hunger:' + hunger;
-    } 
-feedEl.addEventListener('click', handleFeedClick);
-
-
-////////////SLEEP COUNTER//////////
-let sleepiness = 0;
-function handleSleepClick() {
-        sleepiness -= 3; 
-    }
-function sleepInterval() {
-    if (sleepiness < 10){ 
-    sleepiness++;
-        }
-        sleepinessEl.textContent = 'Sleepiness:' + sleepiness;
-    } 
-sleepEl.addEventListener('click', handleSleepClick);
-
-////////////BOREDOM COUNTER//////////
-let boredom = 0;
-function handlePlayClick() {
-        boredom -= 3; 
-    }
-function playInterval() {
-    if (sleepiness < 10){  
-        boredom++;
-        }
-        boredomEl.textContent = 'Boredom:' + boredom;
-    } 
-    if (boredom >8){
-        alertsEl.textContent= `Alert:` + `Tamagotchi is dangerously tired!`
-    }
-playEl.addEventListener('click', handlePlayClick);
- 
-
+/////ALERTS?//////
+if (myTamagotchi.hunger >= 5){
+    alertsEl.textContent= 'Alerts: HUNGER = ' + myTamagotchi.hunger
+} else if (myTamagotchi.sleepiness >= 5){
+    alertsEl.textContent= 'Alerts: SLEEPINESS = ' + myTamagotchi.sleepiness
+}if (myTamagotchi.boredom >= 5){
+    alertsEl.textContent= 'Alerts: BOREDOM = ' + myTamagotchi.boredom
+}
+else {
+    alertsEl.textContent= 'Alerts:'
+}
 
 ///////////MY ATTEMPT AT CREATING EXTENDED CLASS/////////
 // class Player extends Tamagotchi{

@@ -9,27 +9,35 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="splash">
+        <h1 class="fade-in">
+            TAMAGOTCHI DELUXE
+        </h1>
+    </div>
 
-    <h1>Tamagotchi App!!!</h1>
-    
-    <span>
-    <button id="btn-resetGame">Refresh</button>
-    <button id="btn-pauseGame">Freeze Game</button>
-    <button id="btn-startGame" onclick="style.display = 'none'">Start Game</button>
+
+    <h2>TAMAGOTCHI DELUXE</h2>
+    <h3>Stop Tamagatchi from dying by keeping him from getting too Hungry, Bored, or Sleepy (under 10!)</h3>
+    <h4>Once the Tamagatchi reaches 20, he dies of old age and you win! Yaaay</h4>
+    <span class='container'>
+        <button id="btn-pauseGame">Freeze Game</button>
+        <button id="btn-startGame" onclick="style.display = 'none'">Start Game</button>
+        <button id="btn-resetGame">Clear</button>
     </span>
-
+    <a class = 'name'> </a>
     <p id="age">Age: 0</p>
     <br></br>    
     <br></br>   
-    <div id="alerts"> Alert: </div>
+    <div id="alerts">Alerts:</div>
     <div id="hunger">Hunger: 0</div> 
-    <button id="btn-feed">Eat!</button>
+    <!-- <meter id="hunger-meter" min='0' high='7' max='10'></meter> -->
+        <button id="btn-feed" class='hide'>Feed Me!</button>
   
     <div id="sleepiness">Sleepiness: 0</div> 
-    <button id="btn-sleep">Turn off lights</button>
+        <button id="btn-sleep" class='hide'>Turn off lights</button>
 
     <div id="boredom">Boredom: 0</div> 
-    <button id="btn-play">Play!</button>
+        <button id="btn-play" class='hide'>Lets Play!</button>
 
 </body>
 </html>
