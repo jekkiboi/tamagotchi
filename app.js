@@ -14,8 +14,13 @@ const pauseEl = document.getElementById('btn-pauseGame');
 const resetEl = document.getElementById('btn-resetGame');
 const ageEl = document.getElementById('age');
 
+//ALERTS
+const alertsEl = document.getElementById('alerts')
+const alertsHunger = document.getElementById('alertsHunger');
+const alertsSleep = document.getElementById('alertsSleep');
+const alertsPlay = document.getElementById('alertsPlay');
+
 ///////EAT-SLEEP-PLAY
-const alertsEl = document.getElementById('alerts');
 const hungerEl = document.getElementById('hunger');
 const feedEl = document.getElementById('btn-feed');
 const sleepinessEl = document.getElementById('sleepiness');
@@ -49,7 +54,7 @@ hungerInterval = () => {
     }
     console.log('Hunger: ' + this.hunger)
     if (this.hunger >= 6){ 
-        alertsEl.textContent = "Feed Tamagotchi!"
+        alertsHunger.textContent = " FEED! "
         }
         hungerEl.textContent = 'Hunger:' + this.hunger;
 }
@@ -58,6 +63,10 @@ hungerInterval = () => {
     if (this.sleepiness < 10){ 
         this.sleepiness++;
         }
+        console.log('Sleepiness: ' + this.sleepiness)
+        if (this.sleepiness >= 6){ 
+            alertsSleep.textContent = " SLEEP! "
+            }
         sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
     } 
 //////////////BOREDOM COUNTER////////////
@@ -66,6 +75,9 @@ hungerInterval = () => {
         this.boredom++;
         }
         console.log('Boredom: ' + this.boredom)
+        if (this.boredom >= 6){ 
+            alertsPlay.textContent = " PLAY! "
+            }
         boredomEl.textContent = 'Boredom:' + this.boredom;
     }
 ////////////////CLOSE BRACKET CLASS//////////////
@@ -77,6 +89,8 @@ function handleStartClick() {
     playEl.classList.remove('hide')
     sleepEl.classList.remove('hide')
     feedEl.classList.remove('hide')
+    alertsEl.classList.remove('hide')
+
 
     myTamagotchi.interval = setInterval(() => {
      if (myTamagotchi.age < 20) {

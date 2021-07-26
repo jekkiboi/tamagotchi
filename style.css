@@ -110,89 +110,72 @@ h2{
     color: white;
     text-align: left;
     font-size: 20px;
-    margin-top: -65px;
-    margin-left: 158px;
+    margin-top: -20px;
+    margin-left: 120px;
+    
 }
 .form-sub{
-  
-    margin-top: -20px;
-    margin-left: 700px;
+    font-family: OCR A Std, monospace;
+    margin-top: -21px;
+    margin-left: 525px;
 }
-h4{
+#subButton{
+    font-family: OCR A Std, monospace;
+}
+#description{
     font-family: OCR A Std, monospace;
     color: rgb(252, 252, 252);
-    background: rgb(128, 133, 135);
-    margin: 20px;
-    padding: 20px;
-    text-align: left;
-    font-size: 17px;
+    /* background: rgba(128, 133, 135, 0.824); */
+    border-radius: 12px;
+    /* margin: 20px; */
+    /* padding: 10px; */
+    text-align: center;
+    font-size: 20px;
     font-family: OCR A Std, monospace;
-    margin-left: 55px;
-    margin-top: 15px;
+    /* margin-left: 55px; */
+    margin-top: -70px;
 }
 
-#age{
-    font-family: OCR A Std, monospace;
-    color: rgb(237, 227, 201);
-    text-align: left;
-    font-size: 70px;
-    margin-top: 10;
-    margin: 20px;
-    text-shadow: 1px 1px 0 rgb(67, 66, 66),
-    -1px 1px 0 #999,
-    1px -1px 0 #999,
-    -1px -1px 0 #999,
-    0px 1px 0 #999,
-    0px -1px 0 #999,
-    -1px 0px 0 #999,
-    1px 0px 0 #999,
-    2px 2px 0 #999,
-    -2px 2px 0 #999,
-    2px -2px 0 #999,
-    -2px -2px 0 #999,
-    0px 2px 0 #999,
-    0px -2px 0 #999,
-    -2px 0px 0 #999,
-    2px 0px 0 #999,
-    1px 2px 0 #999,
-    -1px 2px 0 #999,
-    1px -2px 0 #999,
-    -1px -2px 0 #999,
-    2px 1px 0 #999,
-    -2px 1px 0 #999,
-    2px -1px 0 #999,
-    -2px -1px 0 #999;
-}
-#container{
+
+/* #container{
     display: flex;
     flex-direction: row;
-}
+    justify-content: space-between;
+    margin-left: 40px;
+    max-width: 360px;
+} */
 #btn-pauseGame{
+    margin-left: 40px;
+    border-radius: 30px;
     font-family: OCR A Std, monospace;
-    color: rgb(255, 255, 255);
+    color: rgb(252, 251, 249);
     font-size: 20px;
-    background: rgb(102, 222, 216);
-    padding: 3px;
+    background: rgba(128, 133, 135, 0.824);
+    padding: 7px;
 }
 #btn-resetGame{
+    border-radius: 30px;
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216);
-    padding: 3px;
+    background: rgba(128, 133, 135, 0.824);
+    padding: 7px;
 }
 #btn-startGame{
+    border-radius: 30px;
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216);
-    padding: 3px;
+    background: rgba(128, 133, 135, 0.824);
+    padding: 7px;
 }
 
 #age{
     font-family: OCR A Std, monospace;
-    color: rgb(102, 222, 216);
+    color: rgba(102, 222, 216, 0.673);
     font-size: 70px;
+    margin-left: 40px;
+    margin-top: 10px;
     text-shadow: 1px 1px 0 rgb(67, 66, 66),
     -1px 1px 0 #FFFFFF,
     1px -1px 0 #FFFFFF,
@@ -220,6 +203,7 @@ h4{
 }
 
 #sleepiness{
+    margin-left: 40px;
     font-family: OCR A Std, monospace;
     color: rgb(236, 241, 241);
     font-size: 40px;
@@ -249,6 +233,7 @@ h4{
     -1px -.5px 0 #999;
 }
 #boredom{
+    margin-left: 40px;
     font-family: OCR A Std, monospace;
     color: rgb(236, 241, 241);
     font-size: 40px;
@@ -279,6 +264,8 @@ h4{
 }
 
 #hunger{
+    margin-left: 40px;
+    margin-top: 20px;
     font-family: OCR A Std, monospace;
     color: rgb(236, 241, 241);
     font-size: 40px;
@@ -313,10 +300,22 @@ h4{
 }
 
 #alerts{
+    display: flex;
+    flex-direction: row;
+    margin-left: 38px;
+    margin-top: 10px;
     font-family: OCR A Std, monospace;
-    color: rgb(249, 3, 3);
-    font-size: 40px;
-    text-shadow: 1px 1px 0 rgb(67, 66, 66),
+    color: rgb(227, 49, 49);
+    font-size: 25px;
+    text-shadow: .5px .5px 0 rgb(67, 66, 66),
+    -.5px .5px 0 #FFFFFF,
+    .5px -.5px 0 #FFFFFF,
+    -.5px -.5px 0 #FFFFFF,
+    0px .5px 0 #FFFFFF,
+    0px -.5px 0 #FFFFFF,
+    -.5px 0px 0 #FFFFFF,
+    .5px 0px 0 #FFFFFF,
+    1px 1px 0 #FFFFFF,
     -1px 1px 0 #FFFFFF,
     1px -1px 0 #FFFFFF,
     -1px -1px 0 #FFFFFF,
@@ -324,41 +323,38 @@ h4{
     0px -1px 0 #FFFFFF,
     -1px 0px 0 #FFFFFF,
     1px 0px 0 #FFFFFF,
-    2px 2px 0 #FFFFFF,
-    -2px 2px 0 #FFFFFF,
-    2px -2px 0 #FFFFFF,
-    -2px -2px 0 #FFFFFF,
-    0px 2px 0 #FFFFFF,
-    0px -2px 0 #FFFFFF,
-    -2px 0px 0 #FFFFFF,
-    2px 0px 0 #FFFFFF,
-    1px 2px 0 #FFFFFF,
-    -1px 2px 0 #FFFFFF,
-    1px -2px 0 #FFFFFF,
-    -1px -2px 0 #FFFFFF,
-    2px 1px 0 #FFFFFF,
-    -2px 1px 0 #FFFFFF,
-    2px -1px 0 #FFFFFF,
-    -2px -1px 0 #FFFFFF;
+    .5px 1px 0 #FFFFFF,
+    -.5px 1px 0 #FFFFFF,
+    .5px -1px 0 #FFFFFF,
+    -.5px -1px 0 #FFFFFF,
+    1px .5px 0 #FFFFFF,
+    -1px .5px 0 #FFFFFF,
+    1px -.5px 0 #FFFFFF,
+    -1px -.5px 0 #FFFFFF;
 }
+
 #btn-feed{
+    margin-left: 40px;
+    border-radius: 12px;
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216);
+    background: rgb(102, 222, 216, 0.564);
     padding: 4px;
 }
 #btn-sleep{
+    border-radius: 12px;
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216);
+    background: rgba(102, 222, 216, 0.564);
     padding: 4px;
 }
 #btn-play{
+    border-radius: 12px;
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216);
+    background: rgb(102, 222, 216, 0.564);
     padding: 4px;
 }

@@ -15,51 +15,51 @@
         </h1>
     </div>
 
-
     <h2>TAMAGOTCHI DELUXE</h2>
-<div class ='wrapper'>
-<form id='nameform'>
-<div class='form-uname'>
-        <label id='nameLabel' for='nameField'>Enter Tamagotchi's Name: </label>
-        <input id='userInput' type ='text' maxlength='25' name='nameField'></input>
-</div>
-<div class='form-sub'>
-        <button id='subButton' type='button'>Submit</button> 
-</div>
-</form>
-<div> 
-    <p id = 'result'></p>
-</div>
-</div>
 
-
-    <h4>Stop your petTamagatchi from dying by keeping the Hungry/Bored/Sleepy meters under 10! 
-       <br> Once the Tamagatchi reaches 20, he dies of old age and you win! (Yaaay)</h4>
+    <h4 id='description'>//KEEP TAMAGATCHI ALIVE//ONCE HE TURNS 20, YOU WIN//YAAY//</h4>
     
-       <a id='container'>
-        <button id="btn-pauseGame">Freeze Game</button>
-        <button id="btn-resetGame">Clear</button>
-        <button id="btn-startGame" onclick="style.display = 'none'">Start Game</button>
-       </a>
-   
-   
-    <div id="age">Age: 0</div>
-    <br></br>    
-    <br></br>   
-    <div id="alerts"> </div>
+    <div class ='wrapper'>
+        <form id='nameform'>
+            <div class='form-uname'>
+                <label id='nameLabel' for='nameField'>//NAME YOUR PET: </label>
+                <input id='userInput' type ='text' maxlength='25' name='nameField'></input>
+            </div>
+            <div class='form-sub'>
+                <button id='subButton' type='button'>Submit</button> 
+            </div>
+        </form>
+        <div> 
+            <p id = 'result'></p>
+        </div>
+    </div>
 
-    
-        <div id="hunger">Hunger: 0</div> 
+
+    <div id="age">AGE: 0</div>
+      
+      
+    <a id='container'>
+        <button id="btn-pauseGame">FREEZE GAME</button>
+        <button id="btn-resetGame">CLEAR</button>
+        <button id="btn-startGame" onclick="style.display = 'none'">START</button>
+    </a>
+   
+    <div id="hunger">Hanger: 0</div> 
     <!-- <meter id="hunger-meter" min='0' high='7' max='10'></meter> -->
-        <div id="sleepiness">Sleepiness: 0</div> 
-        <div id="boredom">Boredom: 0</div> 
-        
+    <div id="sleepiness">Sleepiness: 0</div> 
+    <div id="boredom">Boredom: 0</div> 
+    
     <span>
         <button id="btn-feed" class='hide'>Feed Me!</button>
-        <button id="btn-sleep" class='hide'>Turn off lights</button>
+        <button id="btn-sleep" class='hide'>Sleep zZ</button>
         <button id="btn-play" class='hide'>Lets Play!</button>
+   
+
+        <div id='alerts' class='hide'>ALERT:
+            <div id="alertsHunger"> </div>
+            <div id="alertsSleep"> </div>
+            <div id="alertsPlay"> </div>
+        </div>
     </span>
-
-
 </body>
 </html>
