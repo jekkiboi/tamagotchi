@@ -112,13 +112,12 @@ h2{
     text-align: left;
     font-size: 20px;
     margin-top: -20px;
-    margin-left: 50px;
-    
+    margin-left: 50px; 
 }
 .form-sub{
     font-family: OCR A Std, monospace;
-    margin-top: -20px;
-    margin-left: 525px;
+    margin-top: -21px;
+    margin-left: 460px;
 }
 #subButton{
     font-family: OCR A Std, monospace;
@@ -346,7 +345,7 @@ h2{
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216, 0.564);
+    background: rgba(102, 222, 216, 0.639);
     padding: 4px;
 }
 #btn-sleep{
@@ -354,7 +353,7 @@ h2{
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgba(102, 222, 216, 0.564);
+    background: rgba(102, 222, 216, 0.639);
     padding: 4px;
 }
 #btn-play{
@@ -362,6 +361,6 @@ h2{
     font-family: OCR A Std, monospace;
     color: rgb(255, 255, 255);
     font-size: 20px;
-    background: rgb(102, 222, 216, 0.564);
+    background: rgb(102, 222, 216, 0.639);
     padding: 4px;
 }

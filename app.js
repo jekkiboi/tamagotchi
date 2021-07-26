@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         splash.classList.add('display-none');
     }, 2000);
 })
-
 // const nameEl = document.getElementById('name')
 // const enteredName = prompt("Name your pet:")
 ///////AGE COUNTER
@@ -53,7 +52,6 @@ class Tamagotchi {
     }
 
     ageInterval = () => {
-        console.log('Im gettin old af')
         if (this.age < 20){ 
             this.hunger++
         }
@@ -71,7 +69,10 @@ class Tamagotchi {
             alertsHunger.textContent = " FEED! "
         } if(this.hunger < 6){
             alertsHunger.textContent = ""
-        }
+        } 
+        // if (this.hunger === 10){
+        //     alertsHunger.textContent = "TAMAGOTCHI STARVED. YOU LOSE."
+        // }
         hungerEl.textContent = 'Hunger:' + this.hunger;
     }
 //////////////SLEEP COUNTER//////////////
@@ -84,7 +85,10 @@ class Tamagotchi {
             alertsSleep.textContent = " SLEEP! "
         } if(this.sleepiness < 6){
             alertsSleep.textContent = ""
-        }
+        } 
+        // if (this.sleepiness === 10){
+        //     alertsSleep.textContent = "TAMAGOTCHI PASSED OUT. YOU LOSE."
+        // }
         sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
     } 
     //////////////BOREDOM COUNTER////////////
@@ -97,7 +101,10 @@ class Tamagotchi {
             alertsPlay.textContent = " PLAY! "
         } if(this.boredom < 6){
             alertsPlay.textContent = ""
-        }
+        } 
+        // if (this.boredom === 10){
+        //     alertsPlay.textContent = "TAMAGOTCHI GOT BORED TO DEATH. YOU LOSE."
+        // }
         boredomEl.textContent = 'Boredom:' + this.boredom;
     }
 ////////////////////////CLOSE BRACKET CLASS///////////////////////////
@@ -113,49 +120,49 @@ function handleStartClick() {
 
 
     myTamagotchi.interval = setInterval(() => {
-     if (myTamagotchi.age < 20) {
-        myTamagotchi.age++; 
-        myTamagotchi.hungerInterval()
-        myTamagotchi.sleepInterval()
-        myTamagotchi.playInterval()
-        myTamagotchi.ageInterval()
-        ageEl.textContent = 'AGE:' + myTamagotchi.age;
+        if (myTamagotchi.age < 20) {
+            myTamagotchi.age++; 
+            myTamagotchi.hungerInterval()
+            myTamagotchi.sleepInterval()
+            myTamagotchi.playInterval()
+            myTamagotchi.ageInterval()
+            ageEl.textContent = 'AGE:' + myTamagotchi.age;
          }
     }, 1000) 
 } 
 ///////////////FEED-SLEEP-PLAY BUTTON FUNCTION ADD-ONS///////////////
 function handleFeedClick() {
     if (myTamagotchi.hunger > 2){
-    myTamagotchi.hunger -= 3; 
+        myTamagotchi.hunger -= 3; 
     }
 }
 feedEl.addEventListener('click', handleFeedClick);
 
 function handleSleepClick() {
     if (myTamagotchi.sleepiness > 2){
-    myTamagotchi.sleepiness -= 3; 
+        myTamagotchi.sleepiness -= 3; 
     } 
 }
 sleepEl.addEventListener('click', handleSleepClick);
 
 function handlePlayClick() {
     if (myTamagotchi.boredom > 2){
-    myTamagotchi.boredom -= 3;
+        myTamagotchi.boredom -= 3;
     }
 }
 playEl.addEventListener('click', handlePlayClick);
 
 ///////////////START-RESET-PAUSE FUNCTIONS///////////////
 function handleResetClick(){
-        myTamagotchi.age = 0;
-        myTamagotchi.hunger =0;
-        myTamagotchi.boredom = 0;
-        myTamagotchi.sleepiness = 0;
+    myTamagotchi.age = 0;
+    myTamagotchi.hunger =0;
+    myTamagotchi.boredom = 0;
+    myTamagotchi.sleepiness = 0;
     ageEl.textContent = 'AGE: ' + myTamagotchi.age;
     hungerEl.textContent = 'Hunger: ' + myTamagotchi.hunger;
     sleepinessEl.textContent = 'Sleepiness: ' + myTamagotchi.sleepiness;
     boredomEl.textContent = 'Boredom: ' + myTamagotchi.boredom;
-        clearInterval(myTamagotchi.interval);
+    clearInterval(myTamagotchi.interval);
 }
 function handlePauseClick(){
     clearInterval(myTamagotchi.interval);
@@ -175,6 +182,6 @@ function getUserName() {
         result.textContent = `Pet's Name: ` + nameField;
     }
 }
-    let subButton = document.getElementById('subButton');
-    subButton.addEventListener('click', getUserName, false); 
+let subButton = document.getElementById('subButton');
+subButton.addEventListener('click', getUserName, false); 
 
