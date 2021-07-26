@@ -70,6 +70,7 @@ h1{
 body{
     background-image: url(tamagotchi.jpg);
     background-size: cover;
+    image: url(tamagotchigif.gif);
     
 }
 
@@ -111,21 +112,27 @@ h2{
     text-align: left;
     font-size: 20px;
     margin-top: -20px;
-    margin-left: 120px;
+    margin-left: 50px;
     
 }
 .form-sub{
     font-family: OCR A Std, monospace;
-    margin-top: -21px;
+    margin-top: -20px;
     margin-left: 525px;
 }
 #subButton{
     font-family: OCR A Std, monospace;
 }
+#result{
+    font-family: OCR A Std, monospace;
+    color: rgb(252, 252, 252);
+    font-size: 20px;
+    margin-top: -21px;
+    margin-left: 610px;
+}
 #description{
     font-family: OCR A Std, monospace;
     color: rgb(252, 252, 252);
-    /* background: rgba(128, 133, 135, 0.824); */
     border-radius: 12px;
     /* margin: 20px; */
     /* padding: 10px; */
