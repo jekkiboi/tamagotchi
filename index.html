@@ -17,27 +17,49 @@
 
 
     <h2>TAMAGOTCHI DELUXE</h2>
-    <h3>Stop Tamagatchi from dying by keeping him from getting too Hungry, Bored, or Sleepy (under 10!)</h3>
-    <h4>Once the Tamagatchi reaches 20, he dies of old age and you win! Yaaay</h4>
-    <span class='container'>
+<div class ='wrapper'>
+<form id='nameform'>
+<div class='form-uname'>
+        <label id='nameLabel' for='nameField'>Enter Tamagotchi's Name: </label>
+        <input id='userInput' type ='text'maxlength='25'></input>
+</div>
+<div class='form-sub'>
+        <button id='subButton' type='button'>Submit</button> 
+</div>
+</form>
+<div> 
+    <p id = 'result'></p>
+</div>
+</div>
+
+
+    <h4>Stop your petTamagatchi from dying by keeping the Hungry/Bored/Sleepy meters under 10! 
+       <br> Once the Tamagatchi reaches 20, he dies of old age and you win! (Yaaay)</h4>
+    
+       <a id='container'>
         <button id="btn-pauseGame">Freeze Game</button>
-        <button id="btn-startGame" onclick="style.display = 'none'">Start Game</button>
         <button id="btn-resetGame">Clear</button>
-    </span>
-    <a class = 'name'> </a>
-    <p id="age">Age: 0</p>
+        <button id="btn-startGame" onclick="style.display = 'none'">Start Game</button>
+       </a>
+   
+   
+    <div id="age">Age: 0</div>
     <br></br>    
     <br></br>   
-    <div id="alerts">Alerts:</div>
-    <div id="hunger">Hunger: 0</div> 
-    <!-- <meter id="hunger-meter" min='0' high='7' max='10'></meter> -->
-        <button id="btn-feed" class='hide'>Feed Me!</button>
-  
-    <div id="sleepiness">Sleepiness: 0</div> 
-        <button id="btn-sleep" class='hide'>Turn off lights</button>
+    <div id="alerts"> </div>
 
-    <div id="boredom">Boredom: 0</div> 
+    
+        <div id="hunger">Hunger: 0</div> 
+    <!-- <meter id="hunger-meter" min='0' high='7' max='10'></meter> -->
+        <div id="sleepiness">Sleepiness: 0</div> 
+        <div id="boredom">Boredom: 0</div> 
+        
+    <span>
+        <button id="btn-feed" class='hide'>Feed Me!</button>
+        <button id="btn-sleep" class='hide'>Turn off lights</button>
         <button id="btn-play" class='hide'>Lets Play!</button>
+    </span>
+
 
 </body>
 </html>

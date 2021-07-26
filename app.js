@@ -6,12 +6,14 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     }, 2000);
 })
 
-
+// const nameEl = document.getElementById('name')
+// const enteredName = prompt("Name your pet:")
 ///////AGE COUNTER
 const startEl = document.getElementById('btn-startGame');
 const pauseEl = document.getElementById('btn-pauseGame');
 const resetEl = document.getElementById('btn-resetGame');
 const ageEl = document.getElementById('age');
+
 ///////EAT-SLEEP-PLAY
 const alertsEl = document.getElementById('alerts');
 const hungerEl = document.getElementById('hunger');
@@ -41,9 +43,13 @@ class Tamagotchi {
         this.boredom = 0;
 }
 //////////////HUNGER COUNTER////////////
-hungerInterval() {
+hungerInterval = () => {
     if (this.hunger < 10){ 
-        this.hunger++;
+    this.hunger++
+    }
+    console.log('Hunger: ' + this.hunger)
+    if (this.hunger >= 6){ 
+        alertsEl.textContent = "Feed Tamagotchi!"
         }
         hungerEl.textContent = 'Hunger:' + this.hunger;
 }
@@ -55,10 +61,11 @@ hungerInterval() {
         sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
     } 
 //////////////BOREDOM COUNTER////////////
- playInterval() {
+ playInterval = () => {
     if (this.boredom < 10){  
         this.boredom++;
         }
+        console.log('Boredom: ' + this.boredom)
         boredomEl.textContent = 'Boredom:' + this.boredom;
     }
 ////////////////CLOSE BRACKET CLASS//////////////
@@ -83,17 +90,23 @@ function handleStartClick() {
 } 
 
 function handleFeedClick() {
+    if (myTamagotchi.hunger > 2){
     myTamagotchi.hunger -= 3; 
+    }
 }
 feedEl.addEventListener('click', handleFeedClick);
 
 function handleSleepClick() {
+    if (myTamagotchi.sleepiness > 2){
     myTamagotchi.sleepiness -= 3; 
+    } 
 }
 sleepEl.addEventListener('click', handleSleepClick);
 
 function handlePlayClick() {
-    myTamagotchi.boredom -= 3; 
+    if (myTamagotchi.boredom > 2){
+    myTamagotchi.boredom -= 3;
+    }
 }
 playEl.addEventListener('click', handlePlayClick);
 
@@ -115,17 +128,38 @@ startEl.addEventListener('click', handleStartClick);
 pauseEl.addEventListener('click', handlePauseClick);
 resetEl.addEventListener('click', handleResetClick);
 
+////SUBMIT NAME FUNCTION
+function getUserName() {
+    var nameField = document.getElementById('nameField').value;
+    var result = document.getElementById('result');
+    
+    if (nameField.length < 3) {
+        result.textContent = 'Username must contain at least 3 characters';
+        //alert('Username must contain at least 3 characters');
+    } else {
+        result.textContent = `Pet's Name: ` + nameField;
+        //alert(nameField);
+    }
+    }
+
+    var subButton = document.getElementById('subButton');
+subButton.addEventListener('click', getUserName, false); 
+
+// submitEl.addEventListener( 'click', namer = () => {
+//     submitEl.display
+// })
+
 /////ALERTS?//////
-if (myTamagotchi.hunger >= 5){
-    alertsEl.textContent= 'Alerts: HUNGER = ' + myTamagotchi.hunger
-} else if (myTamagotchi.sleepiness >= 5){
-    alertsEl.textContent= 'Alerts: SLEEPINESS = ' + myTamagotchi.sleepiness
-}if (myTamagotchi.boredom >= 5){
-    alertsEl.textContent= 'Alerts: BOREDOM = ' + myTamagotchi.boredom
-}
-else {
-    alertsEl.textContent= 'Alerts:'
-}
+// if (myTamagotchi.hunger >= 5){
+//     alertsEl.textContent= 'Alerts: HUNGER = ' + myTamagotchi.hunger
+// } else if (myTamagotchi.sleepiness >= 5){
+//     alertsEl.textContent= 'Alerts: SLEEPINESS = ' + myTamagotchi.sleepiness
+// }if (myTamagotchi.boredom >= 5){
+//     alertsEl.textContent= 'Alerts: BOREDOM = ' + myTamagotchi.boredom
+// }
+// else {
+//     alertsEl.textContent= 'Alerts:'
+// }
 
 ///////////MY ATTEMPT AT CREATING EXTENDED CLASS/////////
 // class Player extends Tamagotchi{
