@@ -52,11 +52,11 @@ class Tamagotchi {
     }
 
     ageInterval = () => {
-        if (this.age < 20){ 
-            this.hunger++
-        }
-        if(myTamagotchi.age === 20){
+        if(myTamagotchi.age == 20){
             alertsWin.textContent = "!!!!!!!YOU WON!!!!!!!"
+            alertsHunger.textContent = ""
+            alertsSleep.textContent = ""
+            alertsPlay.textContent = ""
         }
     }
 //////////////HUNGER COUNTER////////////
