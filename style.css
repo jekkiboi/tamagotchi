@@ -68,7 +68,8 @@ h1{
 }
 
 body{
-    background-image: url(tamagotchi.jpg)
+    background-image: url(tamagotchi.jpg);
+    background-size: cover;
     
 }
 
@@ -103,6 +104,7 @@ h2{
     2px -1px 0 #FFFFFF,
     -2px -1px 0 #FFFFFF;
 }
+
 .form-uname{
     font-family: OCR A Std, monospace;
     color: white;
@@ -111,9 +113,17 @@ h2{
     margin-top: -65px;
     margin-left: 158px;
 }
+.form-sub{
+  
+    margin-top: -20px;
+    margin-left: 700px;
+}
 h4{
     font-family: OCR A Std, monospace;
-    color: rgb(24, 36, 38);
+    color: rgb(252, 252, 252);
+    background: rgb(128, 133, 135);
+    margin: 20px;
+    padding: 20px;
     text-align: left;
     font-size: 17px;
     font-family: OCR A Std, monospace;
@@ -153,23 +163,30 @@ h4{
     2px -1px 0 #999,
     -2px -1px 0 #999;
 }
-#btn-pauseGame, a{
+#container{
     display: flex;
-    font-family: OCR A Std, monospace;
-    margin: 20px;
     flex-direction: row;
 }
-#btn-resetGame, a{
-    display: flex;
+#btn-pauseGame{
     font-family: OCR A Std, monospace;
-    margin: 20px;
-    flex-direction: row;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: rgb(102, 222, 216);
+    padding: 3px;
 }
-#btn-startGame, a{
-    display: flex;
+#btn-resetGame{
     font-family: OCR A Std, monospace;
-    margin: 20px;
-    flex-direction: row;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: rgb(102, 222, 216);
+    padding: 3px;
+}
+#btn-startGame{
+    font-family: OCR A Std, monospace;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: rgb(102, 222, 216);
+    padding: 3px;
 }
 
 #age{
@@ -204,7 +221,7 @@ h4{
 
 #sleepiness{
     font-family: OCR A Std, monospace;
-    color: rgb(102, 222, 216);
+    color: rgb(236, 241, 241);
     font-size: 40px;
     text-shadow: .5px .5px 0 rgb(67, 66, 66),
     -.5px .5px 0 #999,
@@ -233,7 +250,7 @@ h4{
 }
 #boredom{
     font-family: OCR A Std, monospace;
-    color: rgb(102, 222, 216);
+    color: rgb(236, 241, 241);
     font-size: 40px;
     text-shadow: .5px .5px 0 rgb(67, 66, 66),
     -.5px .5px 0 #999,
@@ -263,7 +280,7 @@ h4{
 
 #hunger{
     font-family: OCR A Std, monospace;
-    color: rgb(102, 222, 216);
+    color: rgb(236, 241, 241);
     font-size: 40px;
     text-shadow: .5px .5px 0 rgb(67, 66, 66),
     -.5px .5px 0 #999,
@@ -323,4 +340,25 @@ h4{
     -2px 1px 0 #FFFFFF,
     2px -1px 0 #FFFFFF,
     -2px -1px 0 #FFFFFF;
+}
+#btn-feed{
+    font-family: OCR A Std, monospace;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: rgb(102, 222, 216);
+    padding: 4px;
+}
+#btn-sleep{
+    font-family: OCR A Std, monospace;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: rgb(102, 222, 216);
+    padding: 4px;
+}
+#btn-play{
+    font-family: OCR A Std, monospace;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: rgb(102, 222, 216);
+    padding: 4px;
 }

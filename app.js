@@ -130,19 +130,17 @@ resetEl.addEventListener('click', handleResetClick);
 
 ////SUBMIT NAME FUNCTION
 function getUserName() {
-    var nameField = document.getElementById('nameField').value;
-    var result = document.getElementById('result');
+    let nameField = document.getElementById('userInput').value;
+    let result = document.getElementById('result');
     
     if (nameField.length < 3) {
         result.textContent = 'Username must contain at least 3 characters';
-        //alert('Username must contain at least 3 characters');
     } else {
         result.textContent = `Pet's Name: ` + nameField;
-        //alert(nameField);
     }
-    }
+}
 
-    var subButton = document.getElementById('subButton');
+    let subButton = document.getElementById('subButton');
 subButton.addEventListener('click', getUserName, false); 
 
 // submitEl.addEventListener( 'click', namer = () => {
