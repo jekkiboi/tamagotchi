@@ -62,7 +62,7 @@ class Tamagotchi {
 //////////////HUNGER COUNTER////////////
     hungerInterval = () => {
         if (this.hunger < 10){ 
-            this.hunger++
+            this.hunger++;
         }
         console.log('Hunger: ' + this.hunger)
         if (this.hunger >= 6){ 
