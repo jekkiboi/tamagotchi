@@ -70,9 +70,12 @@ class Tamagotchi {
         } if(this.hunger < 6){
             alertsHunger.textContent = ""
         } 
-        // if (this.hunger === 10){
-        //     alertsHunger.textContent = "TAMAGOTCHI STARVED. YOU LOSE."
-        // }
+        if (this.hunger == 10){
+            alertsHunger.textContent = "TAMAGOTCHI STARVED. YOU LOSE."
+            alertsPlay.textContent = ""
+            alertsWin.textContent = ""
+            alertsSleep.textContent = ""
+        }
         hungerEl.textContent = 'Hunger:' + this.hunger;
     }
 //////////////SLEEP COUNTER//////////////
@@ -86,9 +89,12 @@ class Tamagotchi {
         } if(this.sleepiness < 6){
             alertsSleep.textContent = ""
         } 
-        // if (this.sleepiness === 10){
-        //     alertsSleep.textContent = "TAMAGOTCHI PASSED OUT. YOU LOSE."
-        // }
+        if (this.sleepiness == 10){
+            alertsSleep.textContent = "TAMAGOTCHI PASSED OUT. YOU LOSE."
+            alertsWin.textContent = ""
+            alertsHunger.textContent = ""
+            alertsPlay.textContent = ""
+        }
         sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
     } 
     //////////////BOREDOM COUNTER////////////
@@ -102,9 +108,12 @@ class Tamagotchi {
         } if(this.boredom < 6){
             alertsPlay.textContent = ""
         } 
-        // if (this.boredom === 10){
-        //     alertsPlay.textContent = "TAMAGOTCHI GOT BORED TO DEATH. YOU LOSE."
-        // }
+        if (this.boredom == 10){
+            alertsPlay.textContent = "TAMAGOTCHI GOT BORED TO DEATH. YOU LOSE."
+            alertsWin.textContent = ""
+            alertsHunger.textContent = ""
+            alertsSleep.textContent = ""
+        }
         boredomEl.textContent = 'Boredom:' + this.boredom;
     }
 ////////////////////////CLOSE BRACKET CLASS///////////////////////////
