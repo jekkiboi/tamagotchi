@@ -75,10 +75,10 @@ body{
     align-items: center;
 }
 #pet img{
-width:320px;
-height:180px;
+width:400px;
+height:225px;
 margin-left: 350px;
-margin-top: -460px;
+margin-top: -450px;
 }
 h2{
     font-family: OCR A Std, monospace;
@@ -130,7 +130,7 @@ h2{
 #result{
     font-family: OCR A Std, monospace;
     color: rgb(252, 252, 252);
-    font-size: 20px;
+    font-size: 30px;
     margin-top: -21px;
     margin-left: 550px;
 }

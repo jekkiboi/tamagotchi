@@ -82,6 +82,12 @@ class Tamagotchi {
             clearInterval(myTamagotchi.interval)
         }if(this.age === 20){
             clearInterval(myTamagotchi.interval)
+        }if(this.hunger === 10 && this.boredom === 10){
+            alertsHunger.textContent = "TAMAGOTCHI STARVED AND GOT BORED. YOU LOSE."
+        }if(this.sleepiness === 10 && this.hunger === 10){
+            alertsHunger.textContent = "TAMAGOTCHI PASSED OUT AND STARVED. YOU LOSE."
+        }if(this.hunger === 10 && this.AGE === 20){
+            alertsHunger.textContent = "!!!!!!!YOU WON!!!!!!!"
         }
         hungerEl.textContent = 'Hunger:' + this.hunger;
     }
@@ -108,6 +114,10 @@ class Tamagotchi {
             clearInterval(myTamagotchi.interval)
         }if(this.age === 20){
             clearInterval(myTamagotchi.interval)
+        }if(this.sleepiness === 10 && this.boredom === 10){
+            alertsSleep.textContent = "TAMAGOTCHI PASSED OUT AND GOT BORED. YOU LOSE."
+        }if(this.hunger === 10 && this.AGE === 20){
+            alertsSleep.textContent = "!!!!!!!YOU WON!!!!!!!"
         }
         sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
     } 
@@ -134,7 +144,10 @@ class Tamagotchi {
             clearInterval(myTamagotchi.interval)
         }if(this.age === 20){
             clearInterval(myTamagotchi.interval)
+        }if(this.boredom === 10 && this.AGE === 20){
+            alertsWin.textContent = "!!!!!!!YOU WON!!!!!!!"
         }
+
         boredomEl.textContent = 'Boredom:' + this.boredom;
     }
 ////////////////////////CLOSE BRACKET CLASS///////////////////////////
