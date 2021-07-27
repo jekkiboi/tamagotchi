@@ -66,7 +66,7 @@ class Tamagotchi {
         }
         console.log('Hunger: ' + this.hunger)
         if (this.hunger >= 6){ 
-            alertsHunger.textContent = " FEED! "
+            alertsHunger.textContent = " FEED!! "
         } if(this.hunger < 6){
             alertsHunger.textContent = ""
         } 
@@ -75,6 +75,13 @@ class Tamagotchi {
             alertsPlay.textContent = ""
             alertsWin.textContent = ""
             alertsSleep.textContent = ""
+        }
+        if(this.sleepiness === 10){
+            clearInterval(myTamagotchi.interval)
+        }if(this.boredom === 10){
+            clearInterval(myTamagotchi.interval)
+        }if(this.age === 20){
+            clearInterval(myTamagotchi.interval)
         }
         hungerEl.textContent = 'Hunger:' + this.hunger;
     }
@@ -85,7 +92,7 @@ class Tamagotchi {
         }
         console.log('Sleepiness: ' + this.sleepiness)
         if (this.sleepiness >= 6){ 
-            alertsSleep.textContent = " SLEEP! "
+            alertsSleep.textContent = " SLEEP!! "
         } if(this.sleepiness < 6){
             alertsSleep.textContent = ""
         } 
@@ -94,6 +101,13 @@ class Tamagotchi {
             alertsWin.textContent = ""
             alertsHunger.textContent = ""
             alertsPlay.textContent = ""
+        }
+        if(this.hunger === 10){
+            clearInterval(myTamagotchi.interval)
+        }if(this.boredom === 10){
+            clearInterval(myTamagotchi.interval)
+        }if(this.age === 20){
+            clearInterval(myTamagotchi.interval)
         }
         sleepinessEl.textContent = 'Sleepiness:' + this.sleepiness;
     } 
@@ -104,8 +118,8 @@ class Tamagotchi {
         }
         console.log('Boredom: ' + this.boredom)
         if (this.boredom >= 6){ 
-            alertsPlay.textContent = " PLAY! "
-        } if(this.boredom < 6){
+            alertsPlay.textContent = " PLAY!! "
+        }if(this.boredom < 6){
             alertsPlay.textContent = ""
         } 
         if (this.boredom == 10){
@@ -113,6 +127,13 @@ class Tamagotchi {
             alertsWin.textContent = ""
             alertsHunger.textContent = ""
             alertsSleep.textContent = ""
+        }
+        if(this.sleepiness === 10){
+            clearInterval(myTamagotchi.interval)
+        }if(this.hunger === 10){
+            clearInterval(myTamagotchi.interval)
+        }if(this.age === 20){
+            clearInterval(myTamagotchi.interval)
         }
         boredomEl.textContent = 'Boredom:' + this.boredom;
     }
@@ -126,7 +147,6 @@ function handleStartClick() {
     sleepEl.classList.remove('hide')
     feedEl.classList.remove('hide')
     alertsEl.classList.remove('hide')
-
 
     myTamagotchi.interval = setInterval(() => {
         if (myTamagotchi.age < 20) {
